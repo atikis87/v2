@@ -1,0 +1,265 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CV | Attila Kiss</title>
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="keywords" content="design, development, web, javascript,">
+  <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:200,300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/cv.css">
+</head>
+<body>
+  <script src="ThirdParty/react.js"></script>
+  <script src="ThirdParty/react-dom.js"></script>
+  <script src="ThirdParty/JSXTransformer.js"></script>
+  <div id="content"></div>
+  <script type="text/jsx">
+
+/* ======================================================== about me section ===========================================================*/
+
+var DESCRIPTION = 
+{
+    name: "Hey, I'm Attila Kiss.",
+    subtext: "Junior Software Developer and Webdesigner",
+    jobStatus: "Active IT Job Seeker",
+    githubURL: 'https://github.com/ati-radeone',
+    linkedinURL: 'https://www.linkedin.com/in/attila-kiss-2330791b4',
+  }
+
+/* ========================================================== REACT Class ==============================================================*/
+
+  var App = React.createClass(
+  {
+    render: function() {
+      return(
+        <div className="app">
+          <Left
+            name={this.props.profileData.name}
+            subtext={this.props.profileData.subtext}
+            jobStatus={this.props.profileData.jobStatus}
+            githubURL={this.props.profileData.githubURL}
+            linkedinURL={this.props.profileData.linkedinURL}
+          />
+          <Right
+            intro={this.props.profileData.intro}
+            resumeURL={this.props.profileData.resumeURL}
+          />
+        </div>
+      );
+    }
+  });
+
+  var Left = React.createClass(
+  {
+    render: function() 
+    {
+      return(
+        <div className="left">
+          <div className="bg-img"></div>
+          <div className="left-inner">
+            <div className="info">
+              <h2 className="name">{this.props.name}</h2>
+              <div className="subtext">{this.props.subtext}</div>
+              <div className="jobStatus">{this.props.jobStatus}</div>
+              <div className="social-links">
+                <a href={this.props.githubURL} target="_blank"><i className="fa fa-github"></i></a>
+                <a href={this.props.linkedinURL}  target="_blank"><i className="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  });
+
+  var Right = React.createClass(
+  {
+    render: function() 
+    {
+      return(
+        <div className="right">
+          <div className="right-inner">
+            <div className="introduction">
+              <h4>Present</h4>
+              <div className="content">
+                <p className="intro-p">I&#39;m currently completed a basic Java course in Hungary, so expanding my knowledge.</p>
+                <p className="intro-p">Since completing the course, I have been actively looking for a job as a software developer.I love developing and designing web products, from simple landing pages to full-fledged web applications.</p>
+                <p>My goal is to be able to work for a software development company where I can further expand my knowledge and where I can work with an excellent team.</p>
+               
+              </div>
+            </div>
+
+            <div className="experience">
+              <h4>Work Experience</h4>
+              <div className="content">
+
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">September 2020 &mdash; December 2020</div>
+                  </div>
+                  <div className="title">Internship Webdesigner</div>
+                  <ul className="description">
+                    <li>Designed and implemented a variety of media projects.</li>
+                    <li>Performed front-end development for interactive web applications to improve functionality and user experience using HTML, CSS, and JQuery.</li>
+                    <li>Designed, built, and maintained external websites.</li>
+                    <li>Worked with digital graphical design tools including Adobe Photo Shop.</li>
+                  </ul>
+                </div>
+
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">April 2012 &mdash; March 2020</div>
+                  </div>
+                  <div className="title">Catering</div>
+                  <ul className="description">
+                    <li>Although this profession does not belong to programming, I considered it important to mention it because communicating with people is an important part of life.</li>
+                    <li>To perform the tasks, it is important to understand each other as well as the accuracy that was essential in this profession. I try take this into the programming life as well also.</li>
+                  </ul>
+                </div>
+
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">April 2009 &mdash; Februar 2012</div>
+                  </div>
+                  <div className="title">Computer Sales Associate</div>
+                  <ul className="description">
+                    <li>Assisting customers in making an informed technology purchase.</li>
+                    <li>Answered customer questions regarding store merchandise, department information, and pricing.</li>
+                    <li>Interacting with customers on a more personal level.</li>
+                    <li>Performing the maintenance of personal computers and peripheral equipment, identifying problems and providing appropriate solutions.</li>
+                    <li>Inspecting work performed to ensure conformance to specifications and established standards.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            <div className="experience">
+              <h4>Education</h4>
+              <div className="content">
+
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">September 2020 &mdash; December 2020</div>
+                  </div>
+                  <div className="title">SZC Széchenyi István Technical High School (Hungary)</div>
+                  <ul className="description">
+                    <li>Java Developer Certificate of Completion</li>
+                  </ul>
+                </div>
+
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">Juni 2020 &mdash; September 2020</div>
+                  </div>
+                  <div className="title">ipcenter.at GmbH (Austria)</div>
+                  <ul className="description">
+                    <li>British Council APTIS Certificate (B1)</li>
+                  </ul>
+                </div>
+
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">September 2019 &mdash; March 2020</div>
+                  </div>
+                  <div className="title">The University of Vienna's Wi-Fi (Austria)</div>
+                  <ul className="description">
+                    <li>JavaScript Exam Certificate</li>
+                  </ul>
+                </div>
+
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">September 2008 &mdash; March 2009</div>
+                  </div>
+                  <div className="title">Balaton Nyelvstúdió Bt. (Hungary)</div>
+                  <ul className="description">
+                    <li>English Language Exam Certificate (B1)</li>
+                  </ul>
+                </div>
+
+                
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">September 2006 &mdash; Juni 2008</div>
+                  </div>
+                  <div className="title">Bocsor István High School (Hungary)</div>
+                  <ul className="description">
+                    <li>Graduation Exam Certificate</li>
+                  </ul>
+                </div>
+
+                <div className="exp-item">
+                  <div className="job">
+                    <div className="duration">September 2002 &mdash; Juni 2006</div>
+                  </div>
+                  <div className="title">Krúdy Gyula Vocational School (Hungary)</div>
+                  <ul className="description">
+                    <li>Waiter Exam Certificate</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div className="skills">
+              <h4>Skills</h4>
+              <div className="content">
+                <div className="skill-category">
+                  <strong>Languages: &nbsp;</strong>
+                  <span>HTML5, CSS3, JavaScript (ES6), PHP, Java, C++ (basic level)</span>
+                </div>
+                <div className="skill-category">
+                  <strong>Libraries &amp; Frameworks: &nbsp;</strong>
+                  <span>jQuery, Bootstrap, Node JS, Electron, Cordova, React</span>
+                </div>
+                <div className="skill-category">
+                  <strong>Tools: &nbsp;</strong>
+                  <span>Git &amp; Github, Command Line, Adobe Photoshop, Adobe Bridge, Adobe Illustration</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="projects">
+              <h4>Projects</h4>
+              <div className="content">
+                <div className="project-item">
+                  <a className="project-title" href="https://github.com/atikis87/A.T.I-Music-Maker" target="_blank">A.T.I-Music-Maker</a>
+                  <p className="project-desc">A.T.I Music Maker is a desktop application built on the (Electron framework, express, Tone.js, Sqlite3) stack for my exam in 2020.</p>
+                </div>
+                <div className="project-item">
+                  <div className="project-title">T.C Team-Connection (Web Application)</div>
+                  <p className="project-desc">This chat application is a rethought version of an existing chat program. I used it to build it (Node Js).</p>
+                </div>
+                <div className="project-item">
+                  <a className="project-title" href="https://atikis87.github.io/v1" target="_blank">Personal Website V1</a>
+                  <p className="project-desc">My first portfolio website I created with Bootstrap in the summer of 2020.</p>
+                </div>
+                <div className="project-item">
+                  <a className="project-title" href="https://github.com/atikis87/SQL-Customers" target="_blank">SQL-Customers</a>
+                  <p className="project-desc"> This is a database management application based on PHP.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  });
+
+  /* ========================================================== render ==============================================================*/
+  
+  ReactDOM.render(
+    <App profileData={DESCRIPTION}/>,
+    document.getElementById('content')
+  );
+
+
+  </script>
+</body>
+</html>
